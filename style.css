@@ -50,7 +50,7 @@ body
 }
 
 .navbar a:hover{
-    color: #0ef;
+    color: #6c47b3;
 }
 
 .home{
@@ -127,21 +127,32 @@ body
 .home-image {
     position: relative;
     max-width: 30%;
-    opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: 1s;  
     background: #081b29;
     border-radius: 10px;
     box-shadow: 0 0 5px rgb(135, 58, 193), 0 0 20px rgb(135, 58, 193);   
+    z-index: 1;
 }
 
 /* .home-circle {
     position: absolute;
-    max-width: 50%;
-    max-height: 50%;
-    bottom: 5%;
-    left: 57%;
+    max-width: 50vh;
+    max-height: 50vw;
+    bottom: -10%;
+    left: 55%;
     animation: rotate 5s linear infinite;
+    z-index: 2;
+    transform-origin: center;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 } */
 
 
@@ -286,15 +297,15 @@ body
 }
 
 .progress-line.html span{
-    width: 90%;
+    width: 70%;
 }
 
 .progress-line.css span{
-    width: 80%;
+    width: 60%;
 }
 
 .progress-line.Javascript span{
-    width: 70%;
+    width: 30%;
 }
 
 .progress-line.react span{
@@ -302,7 +313,7 @@ body
 }
 
 .progress-line.github span{
-    width: 50%;
+    width: 60%;
 }
 
 .progress-line span::after{
@@ -319,15 +330,15 @@ body
 }
 
 .progress-line.html span::after{
-    content: '90%';
+    content: '70%';
 }
 
 .progress-line.css span::after{
-    content: '80%';
+    content: '60%';
 }
 
 .progress-line.Javascript span::after{
-    content: '70%';
+    content: '30%';
 }
 
 .progress-line.react span::after{
@@ -335,7 +346,7 @@ body
 }
 
 .progress-line.github span::after{
-    content: '50%';
+    content: '60%';
 }
 
 .progress-line span::before{
@@ -409,16 +420,19 @@ body
 }
 
 .layer h5{
-    color: #000;
+    color: #242338;
     font-size: 20px;
     font-weight: 600;
     line-height: 1.8;
+    width: 100%;
 }
 
 .layer p{
-    color: #000;
+    color: #242338;
     font-size: 1rem;
     line-height: 1.8;
+    max-height: 150px;
+    overflow-y: auto ;
 }
 
 .layer ion-icon{
@@ -478,6 +492,7 @@ body
 
 .contact-list{
     margin-bottom: 3rem;
+    order: 1;
 }
 
 .contact-list li{
@@ -496,6 +511,7 @@ body
     font-size: 25px;
     font-weight: 600;
     transition: all .40s ease; 
+    order: 2;
 }
 
 .contact-list li a:hover{
@@ -589,7 +605,7 @@ body
 
 .top ion-icon{
     color: #000;
-    background: #0ef;
+    background: #6c47b3;
     font-size: 20px;
     padding: 10px;
     border-radius: 0.5rem;
@@ -600,18 +616,6 @@ body
         opacity: 1;
     }
 }
-
-
-
-/* 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} */
 
 @keyframes slideRight{
     0%{
@@ -700,9 +704,29 @@ body
     }
   }
   
-  
   .slide-out-right {
     animation-name: slideOutRight;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+  }
+
+  .container {
+    width: 80%;
+    padding: 20px;
+  }
+  
+  /* CSS untuk layar tablet */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  /* CSS untuk layar mobile */
+  @media (max-width: 480px) {
+    .container {
+      width: 100%;
+      padding: 5px;
+    }
   }

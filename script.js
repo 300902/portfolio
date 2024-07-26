@@ -1,3 +1,22 @@
+let spanElement = document.querySelector('.home-content h3 span');
+let text = 'Front End Developer ';
+let index = 0;
+
+// Fungsi untuk memperbarui teks di elemen span
+function updateText() {
+  spanElement.innerText += text[index];
+  spanElement.style.color = "rgb(135, 58, 193)";
+  
+  index++;
+
+  if (index > text.length) {
+    index = 0;
+    spanElement.innerText = '';
+  }
+}
+
+setInterval(updateText, 300);
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
